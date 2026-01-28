@@ -1,0 +1,32 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - TZ=Asia/Tokyo
+    ports:
+      - '3306:3306'
+    volumes:
+      - db-data:/var/lib/mysql
+
+  backend:
+    build:
+      context: ./backend # Dockerfileがあるディレクトリのパス
+    container_name: fastapi_app  
+    restart: unless-stopped
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./backend:/app
+    environment:
+      - DATABASE_URL=mysql+pymysql://root:${MYSQL_ROOT_PASSWORD}@db:3306/${MYSQL_DATABASE}
+      - TZ=Asia/Tokyo
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    depends_on:
+      - db
+
+volumes:
+  db-data:      
