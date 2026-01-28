@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="k41pc1a1fb_cBbbYxtm9" name="ページ1">
-        <mxGraphModel dx="1559" dy="560" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1651" dy="593" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -174,7 +174,7 @@
                         <mxRectangle width="100" height="40" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="255" value="DATETIME" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Helvetica;" parent="252" vertex="1">
+                <mxCell id="255" value="DATETIME DEFAULT CURRENT_TIMESTAMP" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Helvetica;" parent="252" vertex="1">
                     <mxGeometry x="140" width="240" height="40" as="geometry">
                         <mxRectangle width="240" height="40" as="alternateBounds"/>
                     </mxGeometry>
@@ -192,7 +192,7 @@
                         <mxRectangle width="100" height="40" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="259" value="DATETIME" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Helvetica;" parent="256" vertex="1">
+                <mxCell id="259" value="DATETIME DEFAULT CURRENT_TIMESTAMP" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Helvetica;" parent="256" vertex="1">
                     <mxGeometry x="140" width="240" height="40" as="geometry">
                         <mxRectangle width="240" height="40" as="alternateBounds"/>
                     </mxGeometry>
@@ -251,7 +251,7 @@
                         <mxRectangle width="100" height="40" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="272" value="&lt;span class=&quot;notion-enable-hover&quot; data-token-index=&quot;0&quot; style=&quot;fill: rgb(56, 125, 201); isolation: auto;&quot;&gt;DATETIME DEFAULT CURRENT_TIMESTAMP&lt;/span&gt;" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontColor=#000000;fontFamily=Helvetica;" parent="269" vertex="1">
+                <mxCell id="272" value="&lt;span class=&quot;notion-enable-hover&quot; data-token-index=&quot;0&quot; style=&quot;fill: rgb(56, 125, 201); isolation: auto;&quot;&gt;DATETIME&amp;nbsp;&lt;/span&gt;" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontColor=#000000;fontFamily=Helvetica;" parent="269" vertex="1">
                     <mxGeometry x="140" width="280" height="40" as="geometry">
                         <mxRectangle width="280" height="40" as="alternateBounds"/>
                     </mxGeometry>
@@ -344,7 +344,7 @@
                         <mxRectangle width="100" height="40" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="294" value="DATETIME" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Helvetica;" parent="291" vertex="1">
+                <mxCell id="294" value="DATETIME DEFAULT CURRENT_TIMESTAMP" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Helvetica;" parent="291" vertex="1">
                     <mxGeometry x="140" width="240" height="40" as="geometry">
                         <mxRectangle width="240" height="40" as="alternateBounds"/>
                     </mxGeometry>
@@ -362,7 +362,7 @@
                         <mxRectangle width="100" height="40" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="298" value="DATETIME" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Helvetica;" parent="295" vertex="1">
+                <mxCell id="298" value="DATETIME DEFAULT CURRENT_TIMESTAMP" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Helvetica;" parent="295" vertex="1">
                     <mxGeometry x="140" width="240" height="40" as="geometry">
                         <mxRectangle width="240" height="40" as="alternateBounds"/>
                     </mxGeometry>
@@ -380,7 +380,7 @@
                         <mxRectangle width="100" height="40" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="302" value="DATETIME" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Helvetica;" parent="299" vertex="1">
+                <mxCell id="302" value="DATETIME DEFAULT CURRENT_TIMESTAMP" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Helvetica;" parent="299" vertex="1">
                     <mxGeometry x="140" width="240" height="40" as="geometry">
                         <mxRectangle width="240" height="40" as="alternateBounds"/>
                     </mxGeometry>
@@ -457,7 +457,7 @@
                         <mxRectangle width="100" height="40" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="319" value="&lt;span class=&quot;notion-enable-hover&quot; data-token-index=&quot;0&quot; style=&quot;fill: rgb(56, 125, 201); isolation: auto;&quot;&gt;DATETIME&lt;/span&gt;" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontColor=#000000;fontFamily=Helvetica;" parent="316" vertex="1">
+                <mxCell id="319" value="&lt;span class=&quot;notion-enable-hover&quot; data-token-index=&quot;0&quot; style=&quot;fill: rgb(56, 125, 201); isolation: auto;&quot;&gt;DATETIME DEFAULT CURRENT_TIMESTAMP&lt;/span&gt;" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontColor=#000000;fontFamily=Helvetica;" parent="316" vertex="1">
                     <mxGeometry x="140" width="280" height="40" as="geometry">
                         <mxRectangle width="280" height="40" as="alternateBounds"/>
                     </mxGeometry>
@@ -534,7 +534,7 @@
                         <mxRectangle width="100" height="40" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="336" value="&lt;span class=&quot;notion-enable-hover&quot; data-token-index=&quot;0&quot; style=&quot;fill: rgb(56, 125, 201); isolation: auto;&quot;&gt;DATETIME&lt;/span&gt;" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontColor=#000000;fontFamily=Helvetica;" parent="333" vertex="1">
+                <mxCell id="336" value="&lt;span class=&quot;notion-enable-hover&quot; data-token-index=&quot;0&quot; style=&quot;fill: rgb(56, 125, 201); isolation: auto;&quot;&gt;DATETIME DEFAULT CURRENT_TIMESTAMP&lt;/span&gt;" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontColor=#000000;fontFamily=Helvetica;" parent="333" vertex="1">
                     <mxGeometry x="140" width="280" height="40" as="geometry">
                         <mxRectangle width="280" height="40" as="alternateBounds"/>
                     </mxGeometry>
@@ -661,7 +661,7 @@
                         <mxRectangle width="100" height="40" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="396" value="&lt;span class=&quot;notion-enable-hover&quot; data-token-index=&quot;0&quot; style=&quot;fill: rgb(56, 125, 201); isolation: auto;&quot;&gt;DATETIME&lt;/span&gt;" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontColor=#000000;fontFamily=Helvetica;" parent="393" vertex="1">
+                <mxCell id="396" value="&lt;span class=&quot;notion-enable-hover&quot; data-token-index=&quot;0&quot; style=&quot;fill: rgb(56, 125, 201); isolation: auto;&quot;&gt;DATETIME DEFAULT CURRENT_TIMESTAMP&lt;/span&gt;" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontColor=#000000;fontFamily=Helvetica;" parent="393" vertex="1">
                     <mxGeometry x="140" width="160" height="40" as="geometry">
                         <mxRectangle width="160" height="40" as="alternateBounds"/>
                     </mxGeometry>
@@ -678,7 +678,7 @@
                 <mxCell id="403" value="*UNIQUE (learner_id, skill_id)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="90" y="850" width="200" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="404" value="DATETIME" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Helvetica;" vertex="1" parent="1">
+                <mxCell id="404" value="DATETIME DEFAULT CURRENT_TIMESTAMP" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Helvetica;" vertex="1" parent="1">
                     <mxGeometry x="590" y="730" width="240" height="40" as="geometry">
                         <mxRectangle width="240" height="40" as="alternateBounds"/>
                     </mxGeometry>
