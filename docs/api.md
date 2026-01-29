@@ -33,13 +33,9 @@
 | 016 | GET | /api/logs/:log_id/likes |  ログのいいね数を取得 | 不要 |  |
 | 017 | GET | /api/learners/me/skills | 自分の学習技術を取得 | 必要 |  |
 | 018 | POST | /api/learners/me/skills | 自分の学習技術を作成 | 必要 |  |
-| 019 | DELETE | /api/learners/me/skills/:skill_id | 自分の特定の学習技術を削除 | 必要 | 物理削除
-learner_skills は
-learner_id + skill_id を一意制約とし、
-同一スキルの複数登録は不可とする |
+| 019 | DELETE | /api/learners/me/skills/:skill_id | 自分の特定の学習技術を削除 | 必要 | 物理削除　learner_skills はlearner_id + skill_id を一意制約とし、同一スキルの複数登録は不可とする |
 | 020 | POST | /api/logs/:log_id/likes | 特定のログにいいねをする | 必要 |  |
-| 021 | DELETE | /api/logs/:log_id/likes | いいねを取り消し（削除） | 必要 | 物理削除
-バックエンドで認証トークンから`learner_id`を取得し、該当レコードを削除する |
+| 021 | DELETE | /api/logs/:log_id/likes | いいねを取り消し（削除） | 必要 | 物理削除　バックエンドで認証トークンから`learner_id`を取得し、該当レコードを削除する |
 | 022 | POST | /api/logs/:log_id/images | 画像を添付する | 必要 |  |
 | 023 | DELETE | /api/logs/:log_id/images/:image_id | 画像を削除する | 必要 |  |
 
