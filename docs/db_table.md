@@ -45,9 +45,8 @@
 
 | カラム | 型 | 制約 | 説明 |
 | --- | --- | --- | --- |
-| id | UUID PK |  | Learner＿skill ID |
-| learner_id | UUID  FK | NOT NULL UNIQUE | Learner ID |
-| skill_id | INT FK | NOT NULL UNIQUE | スキルID |
+| learner_id | UUID  FK |  | Learner ID |
+| skill_id | INT FK |  | スキルID |
 | created_at  | DATETIME  | DEFAULT CURRENT_TIMESTAMP | 作成日 |
 
 ## テーブル6：likesテーブル
