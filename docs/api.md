@@ -20,7 +20,7 @@
 | 003 | POST | /api/learners | プロフィールを作成（初回登録） | 必要 |  |
 | 004 | GET | /api/learners/me | 自分のプロフィールを取得 | 必要 |  |
 | 005 | PUT | /api/learners/me | 自分のプロフィールを更新 | 必要 |  |
-| 006 | DELETE | /api/learners/me | 自分のプロフィールを削除 | 必要 |  |
+| 006 | DELETE | /api/learners/me | 自分のプロフィールを削除 | 必要 | 論理削除 |
 | 007 | GET | /api/learners | ラーナーの一覧を取得 | 不要 |  |
 | 008 | GET | /api/learners/:id | 特定のラーナーのプロフィールを取得 | 不要 |  |
 | 009 | GET | /api/learners/:id/logs | 特定のラーナーのログを取得 | 不要 | 他人のプロフィール画面に表示 |
@@ -29,23 +29,33 @@
 | 012 | GET | /api/logs/:id | 特定のログを取得 | 不要 |  |
 | 013 | POST | /api/logs | ログを作成 | 必要 |  |
 | 014 | PUT | /api/logs/:id | 特定のログを更新 | 必要 |  |
-| 015 | DELETE | /api/logs/:id | 特定のログを削除 | 必要 |  |
+| 015 | DELETE | /api/logs/:id | 特定のログを削除 | 必要 | 論理削除 |
 | 016 | GET | /api/logs/:log_id/likes |  ログのいいね数を取得 | 不要 |  |
 | 017 | GET | /api/learners/me/skills | 自分の学習技術を取得 | 必要 |  |
 | 018 | POST | /api/learners/me/skills | 自分の学習技術を作成 | 必要 |  |
-| 019 | DELETE | /api/learners/me/skills/:skill_id | 自分の特定の学習技術を削除 | 必要 | learner_skills はlearner_id + skill_id を一意制約とし、同一スキルの複数登録は不可とする |
+| 019 | DELETE | /api/learners/me/skills/:skill_id | 自分の特定の学習技術を削除 | 必要 | 物理削除
+learner_skills は
+learner_id + skill_id を一意制約とし、
+同一スキルの複数登録は不可とする |
 | 020 | POST | /api/logs/:log_id/likes | 特定のログにいいねをする | 必要 |  |
-| 021 | DELETE | /api/logs/:log_id/likes | いいねを取り消し（削除） | 必要 | バックエンドで認証トークンから`learner_id`を取得し、該当レコードを削除する |
+| 021 | DELETE | /api/logs/:log_id/likes | いいねを取り消し（削除） | 必要 | 物理削除
+バックエンドで認証トークンから`learner_id`を取得し、該当レコードを削除する |
 | 022 | POST | /api/logs/:log_id/images | 画像を添付する | 必要 |  |
 | 023 | DELETE | /api/logs/:log_id/images/:image_id | 画像を削除する | 必要 |  |
 
 ---
 
-## 3. 詳細設計
+## 3. リクエスト・レスポンス形式
 
-### 3-001.ロールを取得する
-***エンドポイント***
-`GET /api/roles`
+---
+
+## 3-001. ロールを取得する(GET)
+
+### エンドポイント
+
+```
+GET /api/roles
+```
 
 ### リクエスト
 
@@ -106,12 +116,17 @@ POST /api/learners
 
 ### リクエスト
 
+- ヘッダー
+
 ```json
-【ヘッダー】
 Authorization: Bearer <Firebase ID Token>
 Content-Type: application/json
+```
 
-【ボディ】
+- ボディ
+
+```json
+
 {
     "name": "eriko",
     "introduction": "Next.jsを勉強中です！よろしくお願いします。",
@@ -190,11 +205,15 @@ Content-Type: application/json
 GET /api/learners/me
 ```
 
-```json
-【ヘッダー】
-Authorization: Bearer <Firebase ID Token>
+- ヘッダー
 
-【ボディ】
+```json
+Authorization: Bearer <Firebase ID Token>
+```
+
+- ボディ
+
+```json
 なし
 ```
 
@@ -248,12 +267,16 @@ Authorization: Bearer <Firebase ID Token>
 PUT /api/learners/me
 ```
 
+- ヘッダー
+
 ```json
-【ヘッダー】
 Authorization: Bearer <Firebase ID Token>
 Content-Type: application/json
+```
 
-【ボディ】
+- ボディ
+
+```json
 {
     "introduction":"Next.jsを勉強しています！自分のログが助けになれば嬉しいです。"
 }
@@ -328,11 +351,15 @@ DELETE api/learners/me
 
 ### リクエスト(204 No Content)
 
-```json
-【ヘッダー】
-Authorization: Bearer <Firebase ID Token>
+- ヘッダー
 
-【ボディ】
+```json
+Authorization: Bearer <Firebase ID Token>
+```
+
+- ボディ
+
+```json
 なし
 ```
 
@@ -364,7 +391,8 @@ Authorization: Bearer <Firebase ID Token>
 
 ---
 
-## 4. HTTPステータスコード
+## 4. HTTPステータスコード一覧
+
 | コード | 名称 | 意味 |
 | --- | --- | --- |
 | 200 | OK | 取得・更新成功 |
