@@ -309,7 +309,7 @@ Content-Type: application/json
 - バリデーションエラー(400 Bad Request)
 
 ```json
-}  
+{  
     "error": "Validation failed",
     "message": "入力内容に誤りがあります",
     "details": [
@@ -326,7 +326,7 @@ Content-Type: application/json
 ```json
 {
     "error": "Unauthorized",
-    "message": "認証に失敗しました
+    "message": "認証に失敗しました"
 }
 ```
 
@@ -376,7 +376,7 @@ Authorization: Bearer <Firebase ID Token>
 ```json
 {
     "error": "Unauthorized",
-    "message": "認証に失敗しました
+    "message": "認証に失敗しました"
 }
 ```
 
