@@ -118,7 +118,7 @@ POST /api/learners
 
 - ヘッダー
 
-```json
+```
 Authorization: Bearer <Firebase ID Token>
 Content-Type: application/json
 ```
@@ -131,7 +131,7 @@ Content-Type: application/json
     "name": "eriko",
     "introduction": "Next.jsを勉強中です！よろしくお願いします。",
     "role_id": 1,  
-    "skill_ids": [1, 3, 4]  // ← TypeScript, Next.js, React.js
+    "skill_ids": [1, 3, 4]  
 }
 ```
 
@@ -269,7 +269,7 @@ PUT /api/learners/me
 
 - ヘッダー
 
-```json
+```
 Authorization: Bearer <Firebase ID Token>
 Content-Type: application/json
 ```
@@ -353,7 +353,7 @@ DELETE api/learners/me
 
 - ヘッダー
 
-```json
+```
 Authorization: Bearer <Firebase ID Token>
 ```
 
