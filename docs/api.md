@@ -88,7 +88,7 @@ GET /api/skills
 
 認証：不要
 
-```json
+```
 なし
 ```
 
@@ -207,13 +207,13 @@ GET /api/learners/me
 
 - ヘッダー
 
-```json
+```
 Authorization: Bearer <Firebase ID Token>
 ```
 
 - ボディ
 
-```json
+```
 なし
 ```
 
@@ -359,13 +359,13 @@ Authorization: Bearer <Firebase ID Token>
 
 - ボディ
 
-```json
+```
 なし
 ```
 
 ### レスポンス
 
-```json
+```
 なし
 ```
 
