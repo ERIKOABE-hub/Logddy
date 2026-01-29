@@ -13,4 +13,4 @@ class Skill(Base):
     learner_skills = relationship('LearnerSkills', back_populates='skill')
 
     def __repr__(self):
-        return f'<Skill(id={self.id}, skill_name={self.skill_name})'
+        return f'<Skill(id={self.id}, skill_name={self.skill_name})>'
