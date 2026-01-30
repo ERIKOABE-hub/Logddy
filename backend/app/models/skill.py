@@ -8,7 +8,7 @@ class Skill(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     skill_name = Column(String(100), nullable=False, unique=True)
-    created_at = Column(DateTime, default=func.now(), nulllable=False)
+    created_at = Column(DateTime, default=func.now(), nullable=False)
 
     learner_skills = relationship('LearnerSkills', back_populates='skill')
 
