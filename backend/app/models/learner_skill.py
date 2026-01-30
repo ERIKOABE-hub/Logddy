@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Text, Datetime, ForeignKey
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
 from app.database import Base
@@ -9,7 +9,7 @@ class LearnerSkill(Base):
 
     learner_id = Column(String(36), ForeignKey('learners.id', ondelete='CASCADE'))
     skill_id = Column(Integer, ForeignKey('skills.id'))
-    created_at = Column(Datetime, default=func.now(), nullabel=False)
+    created_at = Column(DateTime, default=func.now(), nullable=False)
 
     learner = relationship('Learner', back_populates='learner_skills')
     skill = relationship('Skill', back_populates='learner_skills') 
