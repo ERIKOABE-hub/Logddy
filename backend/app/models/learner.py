@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Text, Datetime, ForeignKey
+from sqlalchemy import Column, Integer, String, Text, DateTime, ForeignKey
 from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
 from app.database import Base
@@ -8,13 +8,13 @@ class Learner(Base):
     __tablenama__ = 'learners'
 
     id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
-    firebase_uid = Column(String(128), nullabel=False, unique=True, index=True)
-    name = Column(String(100), nullabel=False)
-    introduction = Column(Text, nullabel=True)
-    role_id = Column(Integer, ForeignKey('roles.id'), nullabel=False, index=True)
-    created_at = Column(Datetime, default=func.now(), nullabel=False)
-    updated_at = Column(Datetime, onupdate=func.now(), nullabel=False)
-    deleted_at = Column(Datetime, nullabel=True, index=True)
+    firebase_uid = Column(String(128), nullable=False, unique=True, index=True)
+    name = Column(String(100), nullable=False)
+    introduction = Column(Text, nullable=True)
+    role_id = Column(Integer, ForeignKey('roles.id'), nullable=False, index=True)
+    created_at = Column(DateTime, default=func.now(), nullable=False)
+    updated_at = Column(DateTime, onupdate=func.now(), nullable=False)
+    deleted_at = Column(DateTime, nullable=True, index=True)
 
     roles = relationship('Role', back_populates='learners')
     learner_skills = relationship('LearnerSkill', back_populates='learner')
