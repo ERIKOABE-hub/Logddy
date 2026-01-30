@@ -16,9 +16,9 @@ class Log(Base):
     updated_at = Column(DateTime, onupdate=func.now(), nullable=False)
     deleted_at = Column(DateTime, nullable=True, index=True)
 
-    learner = relationship('Learners', back_populates='logs')
-    likes = relationship('Likes', back_populates='log', cascade='all, delete-orphan')
-    images = relationship('Images', back_populates='log', cascade='all, delete-orphan') 
+    learner = relationship('Learner', back_populates='logs')
+    likes = relationship('Like', back_populates='log', cascade='all, delete-orphan')
+    images = relationship('Image', back_populates='log', cascade='all, delete-orphan') 
     # cascade='all, delete-orphan': このログが削除されたら関連するいいねも削除
     # delete-orphan: 関連が切れた（親を失った）これコードを削除
 
