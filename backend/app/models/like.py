@@ -4,7 +4,7 @@ from sqlalchemy.orm import relationship
 from app.database import Base
 
 class Like(Base):
-    ___tablename___ = 'likes'
+    __tablename__ = 'likes'
 
     id = Column(Integer, primary_key=True)
     learner_id = Column(String(36), ForeignKey('learners.id', ondelete='CASCADE'), nullable=True, index=True)
