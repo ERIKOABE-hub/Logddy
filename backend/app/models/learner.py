@@ -16,7 +16,7 @@ class Learner(Base):
     updated_at = Column(DateTime, onupdate=func.now(), nullable=False)
     deleted_at = Column(DateTime, nullable=True, index=True)
 
-    roles = relationship('Role', back_populates='learners')
+    role = relationship('Role', back_populates='learners')
     learner_skills = relationship('LearnerSkill', back_populates='learner')
     logs = relationship('Log', back_populates='learner')
     likes = relationship('Like', back_populates='learner')
