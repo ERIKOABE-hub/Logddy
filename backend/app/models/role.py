@@ -7,8 +7,8 @@ class Role(Base):
     __tablename__ = 'roles'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    role_name = Column(String(100), nullabel=False, unique=True)
-    created_at = Column(DateTime, default=func.now(), nullabel=False)
+    role_name = Column(String(100), nullable=False, unique=True)
+    created_at = Column(DateTime, default=func.now(), nullable=False)
 
     learners = relationship('Learner', back_populates='role')
 
