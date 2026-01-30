@@ -12,7 +12,7 @@ class Like(Base):
     created_at = Column(DateTime, default=func.now(), nullable=True)
 
     learner = relationship('Learner', back_populates='likes')
-    log = relationship('Logs', back_populates='likes')
+    log = relationship('Log', back_populates='likes')
 
     # テーブル制約
     __table_args__ = (
