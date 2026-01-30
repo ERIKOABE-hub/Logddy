@@ -10,7 +10,7 @@ class Skill(Base):
     skill_name = Column(String(100), nullable=False, unique=True)
     created_at = Column(DateTime, default=func.now(), nullable=False)
 
-    learner_skills = relationship('LearnerSkills', back_populates='skill')
+    learner_skills = relationship('LearnerSkill', back_populates='skill')
 
     def __repr__(self):
         return f'<Skill(id={self.id}, skill_name={self.skill_name})>'
