@@ -7,8 +7,8 @@ import uuid
 class LearnerSkill(Base):
     __tablename__ = 'learner_skills'
 
-    learner_id = Column(String(36), ForeignKey('learners.id', ondelete='CASCADE'))
-    skill_id = Column(Integer, ForeignKey('skills.id'))
+    learner_id = Column(String(36), ForeignKey('learners.id', ondelete='CASCADE'), primary_key=True)
+    skill_id = Column(Integer, ForeignKey('skills.id'), primary_key=True)
     created_at = Column(DateTime, default=func.now(), nullable=False)
 
     learner = relationship('Learner', back_populates='learner_skills')
