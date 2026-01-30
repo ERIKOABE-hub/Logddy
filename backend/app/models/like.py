@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, UniqueConstrait, Index
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, UniqueConstraint, Index
 from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
 from app.database import Base
@@ -16,7 +16,7 @@ class Like(Base):
 
     # テーブル制約
     __table_args__ = (
-        UniqueConstrait('learner_id', 'log_id', name='uq_learner_log'),
+        UniqueConstraint('learner_id', 'log_id', name='uq_learner_log'),
         Index('idx_likes_created_at', 'created_at')
     ) 
 
