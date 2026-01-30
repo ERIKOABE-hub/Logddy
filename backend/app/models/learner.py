@@ -5,7 +5,7 @@ from app.database import Base
 import uuid
 
 class Learner(Base):
-    __tablenama__ = 'learners'
+    __tablename__ = 'learners'
 
     id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
     firebase_uid = Column(String(128), nullable=False, unique=True, index=True)
