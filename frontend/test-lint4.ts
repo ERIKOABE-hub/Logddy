@@ -1,1 +1,1 @@
-const   bad   =    "format"
+const bad = 'format';
