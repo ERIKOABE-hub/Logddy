@@ -1,0 +1,23 @@
+{
+  "name": "my-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Monorepo for backend and frontend",
+  "scripts": {
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "^9.0.0",
+    "lint-staged": "^15.0.0",
+    "prettier": "^3.0.0"
+  },
+  "lint-staged": {
+    "frontend/**/*.{ts,tsx}": [
+      "bash -c 'cd frontend && npm run lint:fix'",
+      "bash -c 'cd frontend && npm run format'"
+    ],
+    "frontend/**/*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  }
+}

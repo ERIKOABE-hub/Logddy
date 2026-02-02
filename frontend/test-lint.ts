@@ -1,9 +1,7 @@
-const   badFormat   =    "test"
+const badFormat = 'test';
 
-
-function   badFunction(  )  {
-    console.log("hello")
+function badFunction() {
+  console.log('hello');
 }
 
-
-export   default   badFunction
+export default badFunction;
