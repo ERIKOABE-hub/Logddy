@@ -11,13 +11,8 @@
     "lint-staged": "^15.0.0",
     "prettier": "^3.0.0"
   },
-  "lint-staged": {
-    "frontend/**/*.{ts,tsx}": [
-      "bash -c 'cd frontend && npm run lint:fix'",
-      "bash -c 'cd frontend && npm run format'"
-    ],
+
     "frontend/**/*.{json,md,yml,yaml}": [
       "prettier --write"
     ]
-  }
 }

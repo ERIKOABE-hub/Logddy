@@ -1,0 +1,9 @@
+{
+  "frontend/**/*.{ts,tsx}": [
+    "bash -c 'cd frontend && npm run lint:fix'",
+    "bash -c 'cd frontend && npm run format'"
+  ],
+  "frontend/**/*.{json,md,yml,yaml}": [
+    "prettier --write"
+  ]
+}
