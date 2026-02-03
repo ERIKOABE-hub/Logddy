@@ -10,7 +10,7 @@ export interface SigninCredentials {
   password: string;
 }
 
-export interface AuthReslut {
+export interface AuthResult {
   user: User;
   token: string;
 }
