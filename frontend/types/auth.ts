@@ -14,3 +14,9 @@ export interface AuthResult {
   user: User;
   token: string;
 }
+
+export interface AuthError {
+  code: string;
+  message: string;
+  originalError?: unknown;
+}
