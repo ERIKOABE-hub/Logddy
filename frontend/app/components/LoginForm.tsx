@@ -43,18 +43,19 @@ const LoginForm = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <circle cx="12" cy="12" r="4" fill="#4F46E5" />
-          <circle cx="28" cy="28" r="4" fill="#4F46E5" />
+          <circle cx="12" cy="28" r="5" stroke="#4F46E5" stroke-width="2.5" />
+          <circle cx="28" cy="12" r="5" stroke="#4F46E5" stroke-width="2.5" />
           <line
-            x1="15"
-            y1="15"
-            x2="25"
-            y2="25"
+            x1="16"
+            y1="24"
+            x2="24"
+            y2="16"
             stroke="#4F46E5"
-            strokeWidth="3"
-            strokeLinecap="round"
+            stroke-width="2.5"
+            stroke-linecap="round"
           />
         </svg>
+
         <span className="text-3xl font-normal">Logddy</span>
       </div>
       <h2 className="text-center text-lg mb-6">Welcome back!</h2>
