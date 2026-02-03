@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import LoginForm from './components/LoginForm';
 
 const LoginPage: React.FC = () => {
   return (
@@ -6,7 +6,9 @@ const LoginPage: React.FC = () => {
       <div
         className="min-h-screen flex items-center justify-center p-4 overflow-hidden"
         style={{ backgroundColor: '#EBEBFF' }}
-      ></div>
+      >
+        <LoginForm />
+      </div>
     </div>
   );
 };
