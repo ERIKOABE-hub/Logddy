@@ -29,7 +29,7 @@ export function handleError(error: unknown): AuthError {
   }
   console.error('予期しないエラー', error);
   return {
-    code: 'known',
+    code: 'unknown',
     message: '予期しないエラーが発生しました',
     originalError: error,
   };
