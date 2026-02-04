@@ -6,6 +6,11 @@ import { handleError } from './errors';
 export async function LoginWithGoogle(): Promise<AuthResult> {
   try {
     console.log('Start the login process with Google...');
+    console.log('🔧 Firebase auth config:', {
+      apiKey: auth.app.options.apiKey,
+      authDomain: auth.app.options.authDomain,
+      projectId: auth.app.options.projectId,
+    });
 
     //Googleプロバイダーのインスタンスを作成
     const provider = new GoogleAuthProvider();
