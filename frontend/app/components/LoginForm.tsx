@@ -53,7 +53,9 @@ const LoginForm = () => {
 
       router.push('/role');
     } catch (err) {
-      setError('Googleログインに失敗しました');
+      const authError = err as AuthError;
+      setError(authError.message);
+      console.log('login with Google failed:', authError);
     } finally {
       setIsLoading(false);
     }
