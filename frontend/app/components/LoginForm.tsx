@@ -3,6 +3,8 @@
 import { useState, FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/app/components/common/button';
+import { LoginWithEmail, LoginWithGoogle } from '@/lib/firebase/auth';
+import { AuthError } from '@/types/auth';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -18,19 +20,45 @@ const LoginForm = () => {
     setIsLoading(true);
 
     try {
-      // todo: ログイン処理をここに実装
-      console.log('アドレスとパスワードでのログイン開始...:', { email, password });
-      // router.push('/dashboard');
+      const result = await LoginWithEmail({ email, password });
+
+      console.log('Login with email successed!!: ', {
+        uid: result.user.uid,
+        email: result.user.email,
+      });
+
+      localStorage.setItem('authToken', result.token);
+
+      router.push('/role');
     } catch (err) {
-      setError('ログインに失敗しました');
+      const authError = err as AuthError;
+      setError(authError.message);
+      console.error('Login error', authError);
     } finally {
       setIsLoading(false);
     }
   };
 
-  const handleGoogleLogin = () => {
-    // todo: Google OAuth処理
-    console.log('Googleでのログイン開始...');
+  const handleGoogleLogin = async () => {
+    setError('');
+    setIsLoading(true);
+
+    try {
+      const result = await LoginWithGoogle();
+
+      console.log('Login with Google successed!!', {
+        uid: result.user.uid,
+        email: result.user.email,
+      });
+
+      router.push('/role');
+    } catch (err) {
+      const authError = err as AuthError;
+      setError(authError.message);
+      console.log('login with Google failed:', authError);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -93,7 +121,7 @@ const LoginForm = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="block w-full px-3 py-2 text-gray-700 placeholder-gray-400 bg-[#F0EEEE] border border-[#F0EEEE] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4F46E5] focus:border-transparent transition-all"
-            placeholder="password"
+            placeholder="............"
             required
             disabled={isLoading}
           />

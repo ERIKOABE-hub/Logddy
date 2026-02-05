@@ -1,11 +1,22 @@
+import { User } from 'firebase/auth';
+
 export interface LoginCredentials {
   email: string;
   password: string;
 }
 
-export interface SigninCredentials {
+export interface SignupCredentials {
   email: string;
   password: string;
 }
 
-// todo: AuthResultの型を定義
+export interface AuthResult {
+  user: User;
+  token: string;
+}
+
+export interface AuthError {
+  code: string;
+  message: string;
+  originalError?: unknown;
+}
