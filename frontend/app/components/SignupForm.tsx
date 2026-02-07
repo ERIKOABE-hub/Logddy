@@ -4,6 +4,7 @@ import { useState, FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from './common/button';
 import Link from 'next/link';
+import { signupWithEmail } from '@/lib/firebase/auth/email-auth';
 
 const SignupForm = () => {
   const [email, setEmail] = useState('');
@@ -19,7 +20,8 @@ const SignupForm = () => {
     setIsLoading(true);
 
     try {
-      // todo: 新規登録処理をここに実装
+      const result = await signupWithEmail({ email, password });
+
       console.log('サインアップ開始...:', { email, password });
       router.push('/role');
     } catch (_err) {
