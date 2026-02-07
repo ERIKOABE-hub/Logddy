@@ -44,8 +44,8 @@ describe('email-auth', () => {
     vi.restoreAllMocks();
   });
 
-  // =====　正常系　===== //
   describe('LoginWithEmail', () => {
+    // =====　正常系　=====
     it('正しいメールアドレスとパスワードで正常にログインできる', async () => {
       const credentials: LoginCredentials = {
         email: 'test@example.com',
@@ -101,6 +101,7 @@ describe('email-auth', () => {
       expect(result.user.email).toBe('test@example.com');
     });
 
+    //=====異常系=====
     it('誤ったパスワードでログインできない', async () => {
       const credentials: LoginCredentials = {
         email: 'test@exmple.com',
@@ -145,6 +146,61 @@ describe('email-auth', () => {
         code: 'auth/user-not-found',
         message: 'ユーザーが見つかりません',
       });
+    });
+  });
+
+  describe('signupWithEmail', async () => {
+    //=====正常系=====
+    it('正しい形式のメールアドレスとパスワードでサインアップできる', async () => {
+      const credentials: SignupCredentials = {
+        email: 'signup-test@example',
+        password: 'Password123',
+      };
+      vi.mocked(createUserWithEmailAndPassword).mockResolvedValue(mockUserCredential);
+
+      const result = await signupWithEmail(credentials);
+
+      expect(createUserWithEmailAndPassword).toHaveBeenCalledWith(
+        expect.anything(),
+        credentials.email,
+        credentials.password
+      );
+      expect(mockUser.getIdToken).toHaveBeenCalled();
+      expect(result).toEqual({
+        user: mockUser,
+        token: mockToken,
+      });
+    });
+    it('トークンが正しく取得される', async () => {
+      const credentials: LoginCredentials = {
+        email: 'test@example.com',
+        password: 'password123',
+      };
+      const testToken = 'test-token-xyz';
+      (mockUser.getIdToken as Mock).mockResolvedValue(testToken);
+
+      vi.mocked(createUserWithEmailAndPassword).mockResolvedValue(mockUserCredential);
+
+      const result = await signupWithEmail(credentials);
+      expect(result.token).toBe(testToken);
+      expect(mockUser.getIdToken).toHaveBeenCalledTimes(1);
+    });
+
+    //=====異常系=====
+    it('パスワードが弱い時、エラーが返ること', async () => {
+      const credentials: SignupCredentials = {
+        email: 'signup-test@example.com',
+        password: '000',
+      };
+      const handledError: AuthError = {
+        code: 'auth/weak-password',
+        message: 'パスワードが弱すぎます',
+        originalError: FirebaseError,
+      };
+      vi.mocked(createUserWithEmailAndPassword).mockRejectedValue(FirebaseError);
+      vi.mocked(handleError).mockReturnValue(handledError);
+
+      await expect(signupWithEmail(credentials)).rejects.toThrow('パスワードが弱すぎます');
     });
   });
 });
