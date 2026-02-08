@@ -16,6 +16,7 @@
     "test:coverage": "vitest --coverage"
   },
   "dependencies": {
+    "@vitest/coverage-v8": "^4.0.18",
     "firebase": "^12.9.0",
     "next": "16.1.4",
     "react": "19.2.3",
