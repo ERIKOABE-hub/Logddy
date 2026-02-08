@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [develop, main]
+    branches: [ci/10-setup-ci, develop, main]
   pull_request:
-    branches: [develop, main]
+    branches: [ci/10-setup-ci,develop, main]
 
 jobs:
 
@@ -40,4 +40,3 @@ jobs:
         run: npm run test:coverage
 
   # Todo: backendのJobを追加
-  
