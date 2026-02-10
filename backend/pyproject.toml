@@ -14,5 +14,5 @@ select = [
 ignore = []
 
 [tool.ruff.format]
-quote-style = "double"
+quote-style = "single"
 indent-style = "space"
