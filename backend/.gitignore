@@ -1,0 +1,21 @@
+# Firebase認証情報（秘密情報）
+firebase-credentials.json
+*-firebase-adminsdk-*.json
+
+# 環境変数
+.env
+.env.local
+.env.production
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+
+# その他
+*.log
+.DS_Store

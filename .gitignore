@@ -14,3 +14,11 @@ backend/__pycache__/
 
 # Lock files
 package-lock.json
+
+# Firebase
+**/firebase-credentials.json
+**/*-firebase-adminsdk-*.json
+
+# Environment variables
+**/.env
+**/.env.local
