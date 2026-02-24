@@ -29,11 +29,12 @@ def initialize_firebase():
         print(f'Error initializing Firebase Admin SDK: {e}')
         raise
 
-    def verify_firebase_token(id_token: str) -> dict:
-        try:
-            decoded_token = auth.verify_id_token(id_token)
-            print(f'JWT verification successful: uid={decoded_token.get("uid")}')
-            return decoded_token
-        except Exception as e:
-            print(f'JWT verification failed: {e}')
-            raise
+
+def verify_firebase_token(id_token: str) -> dict:
+    try:
+        decoded_token = auth.verify_id_token(id_token)
+        print(f'JWT verification successful: uid={decoded_token.get("uid")}')
+        return decoded_token
+    except Exception as e:
+        print(f'JWT verification failed: {e}')
+        raise
