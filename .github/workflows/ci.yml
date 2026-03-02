@@ -58,10 +58,10 @@ jobs:
           cache: 'pip'
           cache-dependency-path: backend/requirements.txt
 
-      # - name: Install dependencies
-      #   run: |
-      #     pip install --upgrade pip
-      #     pip install -r requirements.txt
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
 
       - name: Run tests
         run: pytest tests/ -v --cov=app --cov-report=xml
