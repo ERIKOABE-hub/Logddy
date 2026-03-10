@@ -9,8 +9,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # アプリケーションのコピー
 COPY ./app /code/app
 
-# ポート8000を公開
-EXPOSE 8000
+# ポート8080を公開
+EXPOSE 8080
 
 # サーバー起動
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload", "8080"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080", "--reload"]
