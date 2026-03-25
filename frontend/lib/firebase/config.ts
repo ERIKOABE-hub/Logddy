@@ -2,9 +2,6 @@ import { initializeApp, getApps, FirebaseApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
 import { getAuth, Auth } from 'firebase/auth';
 
-console.log('=== checking env ===');
-console.log('NEXT_FIREBASE_AUTH_DOMAIN', process.env.NEXT_FIREBASE_AUTH_DOMAIN);
-
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -15,25 +12,17 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-console.log('===Firebase Config ===');
-console.log('authDomain:', firebaseConfig.authDomain);
-
-if (!firebaseConfig.authDomain) {
-  console.error('=== CRETICAL ERROR ===');
-  console.error('authDomain is undefined');
-  alert('Firebase Config Error: authDmain is defined.');
-}
-
 let app: FirebaseApp;
 if (!getApps().length) {
   app = initializeApp(firebaseConfig);
-  console.log('Firebase initialize is Done!');
 } else {
   app = getApps()[0];
-  console.log('Already initialized');
 }
 
-const analytics = getAnalytics(app);
+// ブラウザ上でのみAnalyticsを初期化する
+if (typeof window !== 'undefined') {
+  getAnalytics(app);
+}
 
 export const auth: Auth = getAuth(app);
 export default app;
